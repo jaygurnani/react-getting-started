@@ -23,10 +23,10 @@
 
     class Button extends React.Component{      
       handleClick = () => {
-        this.props.  (this.props.incrementValue);
+        this.props.onClickFunction(this.props.incrementValue);
       }
 
-      render(){
+      render() {
         return (
           <button onClick={this.handleClick}>
             +{this.props.incrementValue}
