@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React App</title>
+  </head>
+  <body>
+
+    <h2>Test Page for React</h2>
+
+    <!-- We will put our React component inside this div. -->
+    <div id="react-test"></div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+
+    <!-- Load our React component. -->
+    <script type="text/babel">
+    'use strict';
+
+    class Button extends React.Component{
+      constructor(props){
+        super(props);
+        this.state = {counter: 0}
+      }
+
+      render(){
+        return (
+          <button>{this.state.counter}</button>
+        );
+      };
+    }
+
+    const domContainer = document.querySelector('#react-test');
+    ReactDOM.render(<Button />, domContainer);    
+    </script>
+  </body>
+</html>
